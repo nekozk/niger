@@ -1,0 +1,89 @@
+body {
+    font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('fox.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #9a2c27; /* 楓紅主主題色 */
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #4a3b32; /* 深木褐色內文 */
+}
+
+.topics {
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+label {
+    background-color: #fef2f2; /* 淺暖紅標籤底色 */
+    color: #881337;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    border: 1px solid #fecdd3;
+    transition: all 0.2s ease;
+}
+
+label:hover {
+    background-color: #fbe2e2;
+    border-color: #f43f5e;
+}
+
+.question_ai h3,
+.feedback h3 {
+    color: #9a2c27;
+}
+
+.question_ai,
+.feedback {
+    background-color: rgba(255, 247, 237, 0.9); /* 半透明米橙色卡片 */
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    border: 1px solid #ffedd5;
+}
+
+.container {
+    width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    /* 毛玻璃半透明白底，提升文字清晰度 */
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.min-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: #c2410c; /* 楓葉金橙色按鈕 */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.min-btn:hover {
+    background-color: #9a3412;
+}
