@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 程式練習介面</title>
-    <link rel="stylesheet" href="static/style.css">
+    <!-- <link rel="stylesheet" href="static/style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <!-- CSS檔案連結 -->
 </head>
 <body>
@@ -12,6 +13,7 @@
         <h1>AI 程式練習助手</h1>
         <p>這是一個用於練習程式設計的 AI 助手。請在下方輸入您的程式碼，並點擊「執行」按鈕來查看結果。</p>
         <h3>請輸入選擇的學習主題:</h3>
+        <form method="post">
         <div class="topics">
         <label>
             <input type="radio" name="topic" value="輸入輸出"> 輸入輸出
@@ -26,15 +28,49 @@
             <input type="radio"name="topic" value="串列"> 串列
         </label>
         </div>
-        <button class="min-btn">幫我出題</button>
+        <button class="min-btn" type="submit" name="action" value="generate">幫我出題</button>
+        
+            <p>目前選擇的主題:{{topic}}</p>
+       
+        </form>
         <div class="question_ai">
             <h3>AI 出題:</h3>
-            <p>請選擇一個主題，然後點擊「幫我出題」按鈕，AI 將會為您生成一個練習題目。</p>
+            <p>{{ question_text }}</p>
+            <div class="question_ai">
+    
+
+    {% if topic == "輸入輸出" %}
+    <form method="POST">
+
+    <input type="hidden" name="topic" value="{{ topic }}">
+    <label>
+        <input type="radio" name="student_answer" value="A">
+        A. input()
+    </label>
+    <label>
+        <input type="radio" name="student_answer" value="B">
+        B. print()
+    </label>
+    <label>
+        <input type="radio" name="student_answer" value="C">
+        C. len()
+    </label>
+    <label>
+        <input type="radio" name="student_answer" value="D">
+        D. range()
+    </label>
+
+    <button type="submit" class="min-btn" name="action" value="check">提交答案</button>
+    </form>
+    {% endif %}
+</div>
         </div>
+        {% if feedback %}
         <div class="feedback">
             <h3>AI 回饋:</h3>
-            <p>請在下方輸入您的程式碼，然後點擊「執行」按鈕，AI 將會為您提供回饋和建議。</p>
+            <p>{{ feedback }}</p>
         </div>
+        {% endif %}
     </div>
 
 </body>
