@@ -1,0 +1,4 @@
+#不上傳到github的檔案
+.venv/
+_ pycache_/
+.env
